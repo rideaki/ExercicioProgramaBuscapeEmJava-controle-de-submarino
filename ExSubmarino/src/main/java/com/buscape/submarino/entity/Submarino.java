@@ -75,4 +75,11 @@ public class Submarino {
 		return posicao;
 	}
 	
+	/**
+	 * Imprime posicao do submarino no console na seguinte ordem das coordenadas: x y z DIRECAO
+ 	 */
+	public void imprimePosicaoNaSaida(){
+		System.out.println(this.posicao.getX() + " " + this.posicao.getY() + " " + 
+					this.posicao.getZ() + " " + this.posicao.getDirecao());
+	}
 }

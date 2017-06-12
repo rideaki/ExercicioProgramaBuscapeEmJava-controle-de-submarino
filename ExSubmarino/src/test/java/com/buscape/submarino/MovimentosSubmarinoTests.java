@@ -24,6 +24,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void testePropostoPeloEnunciado() throws Exception {
 		submarino.executaComandos("LMRDDMMUU");
+		submarino.imprimePosicaoNaSaida();
 
 		Posicao position = submarino.getPosicao();
 
@@ -36,7 +37,8 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void testePropostoPeloEnunciado2() throws Exception {
 		submarino.executaComandos("RMMLMMMDDLL");
-
+		submarino.imprimePosicaoNaSaida();
+		
 		Posicao position = submarino.getPosicao();
 
 		assertThat(position, hasProperty("x", is(equalTo(2))));
@@ -48,7 +50,8 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void naoPodeUltrapassarSuperficie() throws Exception {
 		submarino.executaComandos("UUUUDDUUUUU");
-
+		submarino.imprimePosicaoNaSaida();
+		
 		Posicao position = submarino.getPosicao();
 
 		assertThat(position, hasProperty("x", is(equalTo(0))));
@@ -60,6 +63,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void pontoOriginalLeste() throws Exception {
 		submarino.executaComandos("UUUUR");
+		submarino.imprimePosicaoNaSaida();
 
 		Posicao position = submarino.getPosicao();
 
@@ -72,6 +76,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void pontoOriginalSul() throws Exception {
 		submarino.executaComandos("DULL");
+		submarino.imprimePosicaoNaSaida();
 		
 		Posicao position = submarino.getPosicao();
 		
@@ -84,6 +89,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void pontoOriginalNorte() throws Exception {
 		submarino.executaComandos("RRRR");
+		submarino.imprimePosicaoNaSaida();
 		
 		Posicao position = submarino.getPosicao();
 		
@@ -96,6 +102,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void pontoOriginalOeste() throws Exception {
 		submarino.executaComandos("DDDLUUU");
+		submarino.imprimePosicaoNaSaida();
 		
 		Posicao position = submarino.getPosicao();
 		
@@ -108,6 +115,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void naoMoveComComandosInvalidos() throws Exception {
 		submarino.executaComandos("ATPC");
+		submarino.imprimePosicaoNaSaida();
 
 		Posicao position = submarino.getPosicao();
 
@@ -120,6 +128,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void desce2EContinuaAoNorte() {
 		submarino.executaComandos("DD");
+		submarino.imprimePosicaoNaSaida();
 
 		Posicao position = submarino.getPosicao();
 
@@ -132,6 +141,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void desce5EContinuaAoNorte() {
 		submarino.executaComandos("DDDDD");
+		submarino.imprimePosicaoNaSaida();
 
 		Posicao position = submarino.getPosicao();
 
@@ -144,6 +154,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void movimento2NaSuperficieAoNorte() {
 		submarino.executaComandos("MM");
+		submarino.imprimePosicaoNaSaida();
 
 		Posicao position = submarino.getPosicao();
 
@@ -156,6 +167,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void movimento5NaSuperficieAoNorte() {
 		submarino.executaComandos("MMMMM");
+		submarino.imprimePosicaoNaSaida();
 
 		Posicao position = submarino.getPosicao();
 
@@ -168,6 +180,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void movimento5NaSuperficieAOeste() {
 		submarino.executaComandos("LMMMMM");
+		submarino.imprimePosicaoNaSaida();
 
 		Posicao position = submarino.getPosicao();
 
@@ -180,6 +193,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void movimento5NaSuperficieALeste() {
 		submarino.executaComandos("RMMMMM");
+		submarino.imprimePosicaoNaSaida();
 
 		Posicao position = submarino.getPosicao();
 
@@ -192,6 +206,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void movimento5NaSuperficieASul() {
 		submarino.executaComandos("RRMMMMM");
+		submarino.imprimePosicaoNaSaida();
 
 		Posicao position = submarino.getPosicao();
 
@@ -204,7 +219,8 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void sequenciaDeMovimentos() {
 		submarino.executaComandos("DRMDMLMMDMDDLRLR");
-		
+		submarino.imprimePosicaoNaSaida();
+
 		Posicao position = submarino.getPosicao();
 		
 		assertThat(position, hasProperty("x", is(equalTo(2))));
@@ -216,6 +232,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void sequenciaDeMovimentos2() {
 		submarino.executaComandos("LMMRDLDLMLMLULUDDRDRD");
+		submarino.imprimePosicaoNaSaida();
 
 		Posicao position = submarino.getPosicao();
 
@@ -228,6 +245,7 @@ public class MovimentosSubmarinoTests {
 	@Test
 	public void sequenciaDeMovimentos3() {
 		submarino.executaComandos("LMDMDMDMRDLDLMLMLULUDDRDRD");
+		submarino.imprimePosicaoNaSaida();
 
 		Posicao position = submarino.getPosicao();
 
