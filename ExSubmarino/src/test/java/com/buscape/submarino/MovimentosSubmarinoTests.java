@@ -22,6 +22,30 @@ public class MovimentosSubmarinoTests {
 	}
 
 	@Test
+	public void testePropostoPeloEnunciado() throws Exception {
+		submarino.executaComandos("LMRDDMMUU");
+
+		Posicao position = submarino.getPosicao();
+
+		assertThat(position, hasProperty("x", is(equalTo(-1))));
+		assertThat(position, hasProperty("y", is(equalTo(2))));
+		assertThat(position, hasProperty("z", is(equalTo(0))));
+		assertThat(position, hasProperty("direcao", is(DIRECAO.NORTE)));
+	}
+	
+	@Test
+	public void testePropostoPeloEnunciado2() throws Exception {
+		submarino.executaComandos("RMMLMMMDDLL");
+
+		Posicao position = submarino.getPosicao();
+
+		assertThat(position, hasProperty("x", is(equalTo(2))));
+		assertThat(position, hasProperty("y", is(equalTo(3))));
+		assertThat(position, hasProperty("z", is(equalTo(-2))));
+		assertThat(position, hasProperty("direcao", is(DIRECAO.SUL)));
+	}
+	
+	@Test
 	public void naoPodeUltrapassarSuperficie() throws Exception {
 		submarino.executaComandos("UUUUDDUUUUU");
 
